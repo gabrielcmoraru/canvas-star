@@ -17,9 +17,9 @@ for (var i=0; i<numberOfItems; i++) {
   items.push({
     x: Math.random() * canvas.width,
     y: Math.random() * canvas.height,
-    radius: Math.random * 1 + 1,
-    vx: Math.floor(Math.random() * 50) - 40,
-    vy: Math.floor(Math.random() * 50) - 40
+    radius: Math.random() * 1 + 1,
+    vx: Math.floor(Math.random() * 50) - 25,
+    vy: Math.floor(Math.random() * 50) - 25
   });
 }
 
@@ -43,7 +43,7 @@ function animate() {
   for (var i=0, x=items.length; i<x; i++) {
     let item1 = items[i];
     ctx.moveTo(item1.x, item1.y);
-    if (distance(interact, item1) < 200) ctx.lineTo(interact.x, interact.y);
+    if (distance(interact, item1) < 300) ctx.lineTo(interact.x, interact.y);
      for (var j=0, x=items.length; j<x; j++) {
        let item2 = items[j];
        if (distance(item1,item2) < 100) {
@@ -52,7 +52,7 @@ function animate() {
      }
   }
 
-  ctx.lineWidth = 0.5;
+  ctx.lineWidth = 0.1;
   ctx.strokeStyle = 'red';
   ctx.stroke();
 }
